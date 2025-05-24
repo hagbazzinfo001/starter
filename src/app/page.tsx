@@ -68,7 +68,7 @@ export default function Home() {
       href: "/",
     },
     {
-      image: "/images/twitter.svg",
+      image: "/images/LinkedIn.svg",
       alt: "Twitter",
       width: 24,
       height: 24,
@@ -83,7 +83,8 @@ export default function Home() {
       href: "/",
     },
     {
-      image: "/images/LinkedIn.svg",
+      image: "/images/twitter.svg",
+
       alt: "LinkedIn",
       width: 24,
       height: 24,
