@@ -9,7 +9,6 @@ interface main {
   width: number;
   height: number;
   direction?: "row" | "row-reverse" | "column" | "column-reverse"; // Strictly typed
-
   // direction?: "row-reverse";
 }
 interface social {
@@ -126,7 +125,7 @@ export default function Home() {
             height={30}
             className="logo"
           />
-          <h1 className="Start"> Starter </h1>
+          <h1 className="start"> Starter </h1>
         </div>
 
         <div className="nav-link-div">
@@ -224,7 +223,7 @@ export default function Home() {
             width={30}
             height={30}
           />
-          <h1>Starter</h1>
+          <h1 className="start">Starter</h1>
         </div>
         <nav className="fnavbar">
           {footerNav.map((linked, i) => (
