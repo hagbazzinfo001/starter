@@ -1,102 +1,253 @@
 import Image from "next/image";
+import Link from "next/link";
 
+interface main {
+  title: string;
+  description: string;
+  image: string;
+  alt: string;
+  width: number;
+  height: number;
+  direction?: "row" | "row-reverse" | "column" | "column-reverse"; // Strictly typed
+
+  // direction?: "row-reverse";
+}
+interface social {
+  image: string;
+  alt: string;
+  width: number;
+  height: number;
+  href: string;
+}
+interface navList {
+  link: string;
+  href: string;
+}
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const mainDetails: main[] = [
+    {
+      title: "Your title here",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, nunc non posuere consectetur, justo erat semper enim, non hendrerit dui odio id enim.",
+      image: "/images/Feature1 SVG.svg",
+      alt: "Logo",
+      width: 400,
+      height: 400,
+    },
+    {
+      title: "Your title here",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, nunc non posuere consectetur, justo erat semper enim, non hendrerit dui odio id enim.",
+      image: "/images/Feature2 SVG.svg",
+      alt: "Logo",
+      width: 400,
+      height: 400,
+      direction: "row-reverse",
+    },
+    {
+      title: "Your title here",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum, nunc non posuere consectetur, justo erat semper enim, non hendrerit dui odio id enim.",
+      image: "/images/Feature3 SVG.svg",
+      alt: "Logo",
+      width: 400,
+      height: 400,
+    },
+  ];
+  const footerNav: navList[] = [
+    { link: "Home", href: "/" },
+    { link: "About", href: "/About" },
+    { link: "Docs", href: "/Docs.html" },
+    { link: "GitHub", href: "/Github" },
+  ];
+  const socialMedia: social[] = [
+    {
+      image: "/images/Facebook (2).svg",
+      alt: "Facebook",
+      width: 24,
+      height: 24,
+      href: "/",
+    },
+    {
+      image: "/images/twitter.svg",
+      alt: "Twitter",
+      width: 24,
+      height: 24,
+      href: "/",
+    },
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    {
+      image: "/images/Githug.svg",
+      alt: "Github",
+      width: 24,
+      height: 24,
+      href: "/",
+    },
+    {
+      image: "/images/LinkedIn.svg",
+      alt: "LinkedIn",
+      width: 24,
+      height: 24,
+      href: "/",
+    },
+
+    {
+      image: "/images/At.svg",
+      alt: "Pinterest",
+      width: 24,
+      height: 24,
+      href: "/",
+    },
+
+    {
+      image: "/images/Wifi.svg",
+      alt: "wifi",
+      width: 24,
+      height: 24,
+      href: "/",
+    },
+    {
+      image: "/images/Youtube.svg",
+      alt: "Youtube",
+      width: 24,
+      height: 24,
+      href: "/",
+    },
+  ];
+
+  return (
+    <div>
+      <nav className="navbar">
+        <div className="logo-div">
+          <Image
+            src="/images/Starter-logo-large.svg"
+            alt="Logo"
+            width={30}
+            height={30}
+            className="logo"
+          />
+          <h1 className="Start"> Starter </h1>
         </div>
+
+        <div className="nav-link-div">
+          <Link href="/Github" className="nav-link">
+            GitHub
+          </Link>
+          <Link href="/Signin" className="nav-link">
+            SignIn
+          </Link>
+        </div>
+      </nav>
+      <header>
+        <h1 className="h1_tag">
+          The Modern Landing page for{" "}
+          <span style={{ color: "#03A9F4" }}>
+            {" "}
+            <br />
+            React developers
+          </span>
+        </h1>
+        <p className="hero_ptag">
+          The easiest way to build a React landing page in seconds. .
+        </p>
+        <a href="/path/to/theme.zip" download className="her0-button">
+          Download Your Free Theme
+        </a>
+      </header>
+      <main className="main_container ">
+        <h2 className="title">Your title here</h2>
+        <p className="main_ptags">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+          malesuada nisi tellus, non imperdiet nisi tempor at.
+        </p>
+        {/* <div className="main-container">
+          {mainDetails.map((item, index) => (
+            <div
+              key={index}
+              className="main-item"
+              style={{ flexDirection: item.direction || "row" || "column" }}
+            >
+              <div>
+                <h3 className="mainsss">{item.title}</h3>
+                <p className="main_ptags">{item.description}</p>
+              </div>
+              <Image
+                src={item.image}
+                alt={item.alt}
+                width={item.width}
+                height={item.height}
+                className="responsive-image"
+                sizes="(max-width: 700px) 100vw, 50vw"
+              />
+            </div>
+          ))}
+        </div> */}
+        <div className="main-container">
+          {mainDetails.map((item, index) => (
+            <div
+              key={index}
+              className="main-item"
+              style={{ flexDirection: item.direction || "row" }}
+            >
+              <div className="text-content">
+                <h3 className="mainsss">{item.title}</h3>
+                <p className="main_ptags">{item.description}</p>
+              </div>
+              <div className="image-container">
+                <Image
+                  src={item.image}
+                  alt={item.alt}
+                  width={item.width}
+                  height={item.height}
+                  className="responsive-image"
+                  sizes="(max-width: 700px) 100vw, 50vw"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+        <section>
+          <div>
+            <p className="section-p1">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+            <p className="section-p2">Start your Free Trial.</p>
+          </div>
+          <button className="footer-button">Get Started</button>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+      <footer>
+        <div className="logo-div">
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src="/images/Starter-logo-large.svg"
+            alt="Logo"
+            width={30}
+            height={30}
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+          <h1>Starter</h1>
+        </div>
+        <nav className="fnavbar">
+          {footerNav.map((linked, i) => (
+            <Link href={linked.href} key={i}>
+              {linked.link}
+            </Link>
+          ))}
+        </nav>
+        <div className="social-media">
+          {socialMedia.map((social, i) => (
+            <Link href={social.href} key={i}>
+              <Image
+                src={social.image}
+                alt={social.alt}
+                width={social.width}
+                height={social.height}
+              />
+            </Link>
+          ))}
+        </div>
+        <p>
+          &copy; 2021 Nextjs Starter. Powered with ♥ by <span>HAGBAZZ</span>{" "}
+        </p>
       </footer>
     </div>
   );
