@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-
+import "./globals.css";
 interface main {
   title: string;
   description: string;
@@ -69,7 +69,7 @@ export default function Home() {
     },
     {
       image: "/images/LinkedIn.svg",
-      alt: "Twitter",
+      alt: "LinkedIn",
       width: 24,
       height: 24,
       href: "/",
@@ -85,7 +85,7 @@ export default function Home() {
     {
       image: "/images/twitter.svg",
 
-      alt: "LinkedIn",
+      alt: " Twitter ",
       width: 24,
       height: 24,
       href: "/",
@@ -154,7 +154,7 @@ export default function Home() {
           Download Your Free Theme
         </a>
       </header>
-      <main className="main_container ">
+      <main className="main_container  bg-white ">
         <h2 className="title">Your title here</h2>
         <p className="main_ptags">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
