@@ -154,7 +154,7 @@ export default function Home() {
           Download Your Free Theme
         </a>
       </header>
-      <main className="main_container  bg-white ">
+      <main className="main_container   ">
         <h2 className="title">Your title here</h2>
         <p className="main_ptags">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
